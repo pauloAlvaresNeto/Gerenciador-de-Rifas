@@ -24,6 +24,9 @@ $(document).ready(function() {
                     $('.modal-body').load('src/comprador/view/form-comprador.html', function() {
                         $('#NOME').val(dado.dados.NOME)
                         $('#NOME').attr('readonly', 'true')
+                        $('#TELEFONE').val(dado.dados.TELEFONE)
+                        $('#TELEFONE').attr('readonly', 'true')
+
                     })
                     $('.btn-save').hide()
                     $('#modal-comprador').modal('show')

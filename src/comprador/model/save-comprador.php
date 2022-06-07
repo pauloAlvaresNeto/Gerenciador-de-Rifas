@@ -45,7 +45,7 @@
                 $stmt->execute(array(
                     ':id' => $ID,
                     // ':a' => utf8_decode($requestData['NOME']),
-                    ':a' => $requestData['NOME']
+                    ':a' => $requestData['NOME'],
                     ':b' => $requestData['TELEFONE']
                 ));
                 $dados = array(
