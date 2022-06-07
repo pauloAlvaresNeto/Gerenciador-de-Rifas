@@ -18,6 +18,10 @@ $(document).ready(function() {
                 "className": 'text-center'
             },
             {
+                "data": 'TELEFONE',
+                "className": 'text-center'
+            },
+            {
                 "data": 'ID',
                 "orderable": false,
                 "searchable": false,

@@ -20,7 +20,7 @@ $(document).ready(function() {
             data: ID,
             url: 'src/comprador/model/view-comprador.php',
             success: function(dado) {
-                if (dado.comprador == "success") {
+                if (dado.tipo == "success") {
                     $('.modal-body').load('src/comprador/view/form-comprador.html', function() {
                         $('#NOME').val(dado.dados.NOME)
                         $('#NOME').attr('readonly', 'true')
@@ -34,7 +34,7 @@ $(document).ready(function() {
                     Swal.fire({ // Inicialização do SweetAlert
                         title: 'e-Rifa', // Título da janela SweetAler
                         text: dado.mensagem, // Mensagem retornada do microserviço
-                        type: dado.comprador, // comprador de retorno [success, info ou error]
+                        type: dado.tipo, // comprador de retorno [success, info ou error]
                         confirmButtonText: 'OK'
                     })
                 }

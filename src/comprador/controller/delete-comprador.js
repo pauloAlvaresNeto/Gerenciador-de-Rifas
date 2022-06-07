@@ -26,7 +26,7 @@ $(document).ready(function() {
                         Swal.fire({
                             title: 'Sistema de Rifas',
                             text: dados.mensagem,
-                            icon: dados.comprador,
+                            icon: dados.tipo,
                             confirmButtonText: 'OK'
                         })
 
