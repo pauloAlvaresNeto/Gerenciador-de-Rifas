@@ -24,8 +24,8 @@ $(document).ready(function() {
                     $('.modal-body').load('src/vendedor/view/form-vendedor.html', function() {
                         $('#NOME').val(dado.dados.NOME)
                         $('#CELULAR').val(dado.dados.CELULAR)
-                        $('#LOGIN').val(dado.dados.CELULAR)
-                        $('#SENHA').val(dado.dados.CELULAR)
+                        $('#LOGIN').val(dado.dados.LOGIN)
+                        $('#SENHA').val(dado.dados.SENHA)
                         $('#TIPO_ID').empty()
                         $('#ID').val(dado.dados.ID)
 

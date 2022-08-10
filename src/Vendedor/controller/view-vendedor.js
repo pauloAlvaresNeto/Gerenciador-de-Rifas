@@ -26,9 +26,9 @@ $(document).ready(function() {
                         $('#NOME').attr('readonly', 'true')
                         $('#CELULAR').val(dado.dados.CELULAR)
                         $('#CELULAR').attr('readonly', 'true')
-                        $('#LOGIN').val(dado.dados.CELULAR)
+                        $('#LOGIN').val(dado.dados.LOGIN)
                         $('#LOGIN').attr('readonly', 'true')
-                        $('#SENHA').val(dado.dados.CELULAR)
+                        $('#SENHA').val(dado.dados.SENHA)
                         $('#SENHA').attr('readonly', 'true')
                         $('#TIPO_ID').empty()
 
