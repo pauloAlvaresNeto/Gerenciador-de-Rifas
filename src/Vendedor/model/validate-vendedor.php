@@ -10,7 +10,7 @@
     }else{
         $dados = array(
             'tipo' => 'success',
-            'mensagem' => 'Seja Bem-Vindo.' .$_SESSION['NOME']
+            'mensagem' => 'Seja Bem-Vindo ' .$_SESSION['NOME']
         );
     }
 
