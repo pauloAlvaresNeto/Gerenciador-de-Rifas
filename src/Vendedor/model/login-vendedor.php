@@ -25,4 +25,4 @@
         }
     }
 
-    echo json_enconde($dados);
+    echo json_encode($dados);

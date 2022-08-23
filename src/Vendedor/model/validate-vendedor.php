@@ -8,8 +8,10 @@
             'mensagem' => 'Você não está autenticado no sistema.'
         );
     }else{
-        'tipo' => 'success',
+        $dados = array(
+            'tipo' => 'success',
             'mensagem' => 'Seja Bem-Vindo.' .$_SESSION['NOME']
+        );
     }
 
-    echo json_enconde($dados);
+    echo json_encode($dados);
