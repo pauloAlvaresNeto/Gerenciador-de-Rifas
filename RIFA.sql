@@ -26,7 +26,8 @@ CREATE TABLE `promocao` (
   `DATA_FIM` date NOT NULL,
   `DATA_SORTEIO` date NOT NULL,
   `ARRECADACAO` double NOT NULL,
-  `VALOR_RIFA` double NOT NULL
+  `VALOR_RIFA` double NOT NULL,
+  `PREMIO_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -65,8 +66,7 @@ CREATE TABLE `premio` (
   `ID` int(11) NOT NULL,
   `NOME` varchar(45) NOT NULL,
   `DESCRICAO` varchar(255) NOT NULL,
-  `VALOR` double NOT NULL,
-  `PROMOCAO_ID` int(11) NOT NULL
+  `VALOR` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

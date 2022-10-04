@@ -7,20 +7,7 @@ $(document).ready(function() {
 
         $('.modal-title').append('Adicionar novo premio')
 
-        $('.modal-body').load('src/premio/visao/form-premio.html', function() {
-            // Criar um ajax para buscar todos os tipos de vendendores possíveis
-            $.ajax({
-                dataType: 'json',
-                type: 'POST',
-                assync: true,
-                url: 'src/promocao/modelo/all-promocao.php',
-                success: function(dados) {
-                    for (const result of dados) {
-                        $('#PROMOCAO_ID').append(`<option value="${result.ID}">${result.TITULO}</option>`)
-                    }
-                }
-            })
-        })
+        $('.modal-body').load('src/premio/visao/form-premio.html')
 
         $('.btn-save').show()
 

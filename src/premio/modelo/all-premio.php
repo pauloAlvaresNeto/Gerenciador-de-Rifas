@@ -2,7 +2,7 @@
 
     include('../../conexao/conn.php');
 
-    $sql = "SELECT * FROM `PROMOCAO` ORDER BY TITULO DESC";
+    $sql = "SELECT * FROM `PREMIO` ORDER BY NOME DESC";
 
     $resultado = $pdo->query($sql);
 

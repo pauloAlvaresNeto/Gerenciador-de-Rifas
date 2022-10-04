@@ -22,12 +22,11 @@
         if($operacao == 'insert'){
             // Prepara o comando INSERT para ser executado
             try{
-                $stmt = $pdo->prepare('INSERT INTO PREMIO (NOME, DESCRICAO, VALOR, PROMOCAO_ID) VALUES (:a, :b, :c, :d)');
+                $stmt = $pdo->prepare('INSERT INTO PREMIO (NOME, DESCRICAO, VALOR) VALUES (:a, :b, :c)');
                 $stmt->execute(array(
                     ':a' => $requestData['NOME'],
                     ':b' => $requestData['DESCRICAO'],
                     ':c' => $requestData['VALOR'],
-                    ':d' => $requestData['PROMOCAO_ID']
                 ));
                 $dados = array(
                     "tipo" => 'success',
@@ -36,19 +35,18 @@
             } catch(PDOException $e) {
                 $dados = array(
                     "tipo" => 'error',
-                    "mensagem" => 'Não foi possível efetuar o cadastro do curso.'
+                    "mensagem" => 'Não foi possível efetuar o cadastro do premio.'
                 );
             }
         } else {
             // Se minha variável operação estiver vazia então devo gerar os scripts de update
             try{
-                $stmt = $pdo->prepare('UPDATE PREMIO SET NOME = :a, DESCRICAO = :b, VALOR = :c, PROMOCAO_ID = :d WHERE ID = :id');
+                $stmt = $pdo->prepare('UPDATE PREMIO SET NOME = :a, DESCRICAO = :b, VALOR = :c, WHERE ID = :id');
                 $stmt->execute(array(
                     ':id' => $ID,
                     ':a' => $requestData['NOME'],
                     ':b' => $requestData['DESCRICAO'],
                     ':c' => $requestData['VALOR'],
-                    ':d' => $requestData['PROMOCAO_ID']
                 ));
                 $dados = array(
                     "tipo" => 'success',

@@ -7,10 +7,10 @@
     // $password = "10jBzsOvo5JqtN";
 
     // COnexão off-line
-    $hostname = "localhost:3308";
-    $dbname = "rifa";
+    $hostname = "localhost";
+    $dbname = "rifas";
     $username = "root";
-    $password = "usbw";
+    $password = "";
 
 
     try {

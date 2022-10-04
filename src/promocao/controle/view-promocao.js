@@ -36,6 +36,23 @@ $(document).ready(function() {
                         $('#ARRECADACAO').attr('readonly', 'true')
                         $('#VALOR_RIFA').val(dado.dados.VALOR_RIFA)
                         $('#VALOR_RIFA').attr('readonly', 'true')
+
+                        var PREMIO_ID = dado.dados.PREMIO_ID
+
+                        // Consultar todos os tipos cadastrados em banco de dados
+                        $.ajax({
+                            dataType: 'json',
+                            type: 'POST',
+                            assync: true,
+                            url: 'src/premio/modelo/all-premio.php',
+                            success: function(dados) {
+                                for (const result of dados) {
+                                    if (result.ID === PREMIO_ID) {
+                                        $('#PREMIO_ID').append(`<option value="${result.ID}">${result.NOME}</option>`)
+                                    }
+                                }
+                            }
+                        })
                     })
                     $('.btn-save').hide()
                     $('#modal-promocao').modal('show')

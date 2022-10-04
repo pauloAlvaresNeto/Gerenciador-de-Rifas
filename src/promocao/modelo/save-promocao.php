@@ -22,7 +22,7 @@
         if($operacao == 'insert'){
             // Prepara o comando INSERT para ser executado
             try{
-                $stmt = $pdo->prepare('INSERT INTO PROMOCAO (TITULO, DESCRICAO, DATA_INICIO, DATA_FIM, DATA_SORTEIO, ARRECADACAO, VALOR_RIFA) VALUES (:a, :b, :c, :d, :e, :f, :g)');
+                $stmt = $pdo->prepare('INSERT INTO PROMOCAO (TITULO, DESCRICAO, DATA_INICIO, DATA_FIM, DATA_SORTEIO, ARRECADACAO, VALOR_RIFA, PREMIO_ID) VALUES (:a, :b, :c, :d, :e, :f, :g, :h)');
                 $stmt->execute(array(
                     ':a' => $requestData['TITULO'],
                     ':b' => $requestData['DESCRICAO'],
@@ -30,7 +30,8 @@
                     ':d' => $requestData['DATA_FIM'],
                     ':e' => $requestData['DATA_SORTEIO'],
                     ':f' => $requestData['ARRECADACAO'],
-                    ':g' => $requestData['VALOR_RIFA']
+                    ':g' => $requestData['VALOR_RIFA'],
+                    ':h' => $requestData['PREMIO_ID']
                 ));
                 $dados = array(
                     "tipo" => 'success',
@@ -45,7 +46,7 @@
         } else {
             // Se minha variável operação estiver vazia então devo gerar os scripts de update
             try{
-                $stmt = $pdo->prepare('UPDATE PROMOCAO SET TITULO = :a, DESCRICAO = :b, DATA_INICIO = :c, DATA_FIM = :d, DATA_SORTEIO = :e, ARRECADACAO = :f, VALOR_RIFA = :g  WHERE ID = :id');
+                $stmt = $pdo->prepare('UPDATE PROMOCAO SET TITULO = :a, DESCRICAO = :b, DATA_INICIO = :c, DATA_FIM = :d, DATA_SORTEIO = :e, ARRECADACAO = :f, VALOR_RIFA = :g, PREMIO_ID = :h  WHERE ID = :id');
                 $stmt->execute(array(
                     ':id' => $ID,
                     ':a' => $requestData['TITULO'],
@@ -54,7 +55,8 @@
                     ':d' => $requestData['DATA_FIM'],
                     ':e' => $requestData['DATA_SORTEIO'],
                     ':f' => $requestData['ARRECADACAO'],
-                    ':g' => $requestData['VALOR_RIFA']
+                    ':g' => $requestData['VALOR_RIFA'],
+                    ':h' => $requestData['PREMIO_ID']
                 ));
                 $dados = array(
                     "tipo" => 'success',
